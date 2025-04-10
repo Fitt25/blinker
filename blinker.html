@@ -1,0 +1,35 @@
+<div>
+    <input class = "text" type = "text"/>
+    <input class = "times" type = "text"/>
+    Times per Second!
+    
+</div>
+
+<p class= "blinkingText"></p>
+<script>
+    const textBlink = document.querySelector(".blinkingText")
+    const inputBlink = document.querySelector(".text")
+    const inputTimes = document.querySelector(".times")
+    const times = 3
+    const text="Welcome!"
+    let hide = false
+    const blink = () => {
+        txt = inputBlink.value || text
+        time = +inputTimes.value || times
+        if (hide){
+            txt = ''
+        }  
+        
+        textBlink.innerText = txt
+        hide = !hide
+        
+
+        setTimeout(()=>{
+            blink()
+        },1000/time)
+        
+    }
+    
+    blink()
+    
+</script>
